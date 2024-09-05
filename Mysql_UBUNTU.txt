@@ -109,6 +109,15 @@ Step 4: Remove Remaining MySQL Packages
 
 	sudo apt autoremove
 
+Step 5:
+
+This should be considered optional and I would advise one to do this. 
+After uninstalling applications or packages its good to update the system to be up to-date.
+
+Type the following Command 
+
+sudo apt-get dist-upgrade
+
 
 
 
