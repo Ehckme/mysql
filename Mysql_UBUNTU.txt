@@ -1,0 +1,127 @@
+1. Firstly in UBUNTU 22.04, press and hold "CTRL+ALT+T" then release to open Terminal
+# This should open the terminal for running commands
+
+2. run the the below following command to update system repository:
+
+$ sudo apt update
+
+3. Install MySQL server on your system with following command:
+
+$ sudo apt-get install mysql-server
+
+# This wll install MySQL server on your UBUNTU system
+# if prompted for additional space usage, press 'Y' and enter and it will continue 
+install
+# Wait a few minutes until it is done
+
+4. Verify MySQL servicce status by running the following commands:
+
+$ system is-active mysql
+
+# if the terminal outputs 'active' just below your command, then it is active.
+
+5. Configure MySQL server with the below command for 
+interactive configuration of the MySQL server
+
+$ sudo mysql_secure_installation 
+
+# When prompted to 'Would you like to setup VALIDATE PASSWORD component?' prss 'Y'
+
+# From the three levels of password validation policy; select with '2'
+or choose the option of your choice.
+
+# This will prompt you to enter new password and to re-enter it.
+
+# you then be asked to if 'you wish to continue with password provided?' Press 'y' and enter
+
+4.1 When prompted 'Remove test database and access to it?' Press 'N' and enter
+
+4.2 When Prompted 'Reload privileg tables now? Press 'Y' and enter
+
+
+5. Next Log in to the MySQL server with the following command:
+
+$ sudo mysql
+
+# This command will take you to the mysql> command terminal
+
+6. Enter the following command in the MySQL Command Terminal:
+
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Password123#@!';
+
+# you should see the Query OK, o rows affected status
+
+7. Enter the following command in the MySQL Command Terminal: 
+
+mysql> FLUSH PRIVILEGES
+
+# This should also return the status Query OK, o rows affected
+
+8. Type exit to exit mysql command:
+
+mysql> exit
+
+9. Type the followng command in the UBUNTU Terminal:
+
+$ mysql -u root -p
+
+# This should prompt for password input. Enter the new password that you created.
+
+--------- IF you lend to the mysql> command terminal without any errors -------
+
+Then you have successfully istalled mysql server
+
+
+------------------------------------------------------------------------------
+
+Now with just the followng single line of command:
+
+10. $ sudo snap install mysql-workbench-community
+
+# above command will install MySQL-Workbench-Community
+
+# After that:
+
+# Just head on over to application and open MySQLWorkbench. And that is it,
+you are all set.
+
+######################## REMOVING MY SQL #######################
+
+Step 1: Stop MySQL Service
+
+	sudo systemctl stop MySQL
+
+
+
+Step 2: Uninstall MySQL Database
+	
+	sudo apt purge mysql-server mysql-client mysql-common mysql-server-core-* mysql-client-core-*
+
+
+
+Step 3: Remove Configuration Files and Databases
+
+	sudo rm -rf /etc/mysql /var/lib/MySQL
+
+
+
+Step 4: Remove Remaining MySQL Packages
+
+	sudo apt autoremove
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
