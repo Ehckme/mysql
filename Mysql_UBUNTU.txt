@@ -7,7 +7,7 @@ $ sudo apt update
 
 3. Install MySQL server on your system with following command:
 
-$ sudo apt-get install mysql-server
+$ sudo apt install mysql-server
 
 # This wll install MySQL server on your UBUNTU system
 # if prompted for additional space usage, press 'Y' and enter and it will continue 
@@ -16,7 +16,7 @@ install
 
 4. Verify MySQL servicce status by running the following commands:
 
-$ system is-active mysql
+$ sudo systemctl status mysql.service
 
 # if the terminal outputs 'active' just below your command, then it is active.
 
@@ -27,14 +27,16 @@ $ sudo mysql_secure_installation
 
 # When prompted to 'Would you like to setup VALIDATE PASSWORD component?' prss 'Y'
 
-# From the three levels of password validation policy; select with '2'
+# From the three levels of password validation policy; select with '1'
 or choose the option of your choice.
 
 # This will prompt you to enter new password and to re-enter it.
 
 # you then be asked to if 'you wish to continue with password provided?' Press 'y' and enter
 
-4.1 When prompted 'Remove test database and access to it?' Press 'N' and enter
+4.0.1 Remove anonymous users? y (press | y for yes, and | N for no or any other key) : Y
+
+4.1 When prompted 'Remove test database and access to it?' Press 'y' and enter
 
 4.2 When Prompted 'Reload privileg tables now? Press 'Y' and enter
 
